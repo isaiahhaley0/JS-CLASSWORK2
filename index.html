@@ -10,7 +10,9 @@
 	
 	<header>
 		<h1 class="headerformat">Welcome to the covid assesment website</h1>
-		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+			<link rel = "stylesheet" href="styles/style.css">
 	</header>
 	<section>
 		<h2 class="headerformat">Screener Questions</h2>
@@ -108,7 +110,7 @@
 						<div class="alert alert-primary">
 						<h3>Have you experienced any of the following symptoms in the last 24 hours?</h3> 
 					</div>
-					<div class="form-group col-md-auto">
+					<div class="row form-group">
 						<label for="ddFever" class="col-form-label col-md-auto">
 							 Fever or chills: 
 						</label>
@@ -119,7 +121,7 @@
 							</select>
 						</div>
 					</div>
-					<div class="form-group col-md-auto">
+					<div class="row form-group">
 						<label for="ddCough" class="col-form-label col-md-auto">
 							 Cough: 
 						</label>
@@ -130,7 +132,7 @@
 							</select>
 						</div>
 					</div>
-					 <div class="form-group col-md-auto">
+					<div class="row form-group">
 						<label for="ddBreath" class="ol-form-label col-md-auto">
 							 Shortness of breath or difficulty breathing: 
 						</label>
@@ -141,7 +143,7 @@
 							</select>
 						</div>
 					</div>
-					<div class="form-group col-md-auto">
+					<div class="row form-group">
 						<label for="ddFatigue" class="col-md-auto col-form-label">
 							 Fatigue: 
 						</label>
@@ -152,7 +154,7 @@
 							</select>
 						</div>
 					</div>
-					 <div class="form-group col-md-auto">
+					<div class="row form-group">
 						<label for="ddAches" class="col-md-auto col-form-label" >
 							 Muscle or body aches: 
 						</label>
@@ -163,7 +165,7 @@
 							</select>
 						</div>
 					</div> 
-					<div class="form-group col-md-auto">
+					<div class="row form-group">
 						<label for="ddHead" class="col-md-auto col-form-label">
 							Headache:
 							</label>
@@ -174,7 +176,7 @@
 							</select>
 						</div>
 					</div>
-					 <div class="form-group col-md-auto">
+					<div class="row form-group">
 						<label for="ddSmell" class="col-md-auto col-form-label">
 							 New loss of taste or smell: 
 						</label>
@@ -185,7 +187,7 @@
 							</select>
 						</div>
 					</div>
-					 <div class="form-group col-md-auto">
+					<div class="row form-group">
 						<label for="ddThroat" class="col-md-auto col-form-label">
 							 Sore throat: 
 						</label>
@@ -196,7 +198,7 @@
 							</select>
 						</div>
 					</div>
-					<div class="form-group col-md-auto">
+					<div class="row form-group">
 						<label for="ddNose" class="col-md-auto col-form-label">
 							 Congestion or runny nose: 
 						</label>
@@ -207,7 +209,7 @@
 							</select>
 						</div>
 					</div>
-					<div class="col-md-auto form-group">
+					<div class="row form-group">
 						<label for="ddVomit" class="col-md-auto col-form-label">
 							 Nausea or vomiting: 
 						</label>
@@ -218,7 +220,7 @@
 							</select>
 						</div>
 					</div>
-					<div class="col-md-auto form-group">
+					<div class="row form-group">
 						<label for="ddDiarrhea" class="col-md-auto col-form-label">
 							 Diarrhea: 
 						</label>
@@ -233,7 +235,7 @@
 				<fieldset class="border redborder form-group w-auto">
 					<legend class="col-sm-2 col-form-label col-md-auto legendformat">Contact Tracing Questions</legend>
 
-					<div class="col-md-auto form-group">
+					<div class="row form-group">
 						<label for="ddContact" class="col-md-auto col-form-label">
 							 Have you had contact (within 6 feet for > 15 minutes), or caring for someone who is diagnosed with COVID-19 in the last 14 days and were not wearing proper personal protective equipment?
 						</label>
@@ -244,7 +246,7 @@
 							</select>
 						</div>
 					</div>
-					 <div class="col-md-auto form-group">
+					<div class="row form-group">
 						<label for="ddDiagnosis" class="col-md-auto col-form-label">
 							 Have you had a diagnosis of COVID-19 in the last 10 days?
 						</label>
@@ -255,24 +257,24 @@
 							</select>
 						</div>
 					</div> 
-					<div class="col-md-auto form-group">
+					<div class="row form-group">
 						<label for="ddTravel" class="col-md-auto col-form-label">
 							 Have you travelled to any country in the last 14 days?
 						</label>
 						<div>
-							<select id="ddTravel" name="ddTravel" class="form-control">
+							<select id="ddTravel" name="ddTravel" class="form-control" onchange="updateCountryView()">
 								<option value="No" selected>No</option>
 								<option value="Yes">Yes</option>
 							</select>
 						</div>
 					</div> 
-					 <div class="col-md-auto">
-					<label for = "travelText"> If yes, what countries?</label><br>
-					<div class="col-sm">
-					<input type="text" id = "travelText" name = "travel" required class="form-control inputformat"><br>
-				</div>
-				</div>
-					<div class="col-md-auto form-group">
+					 <div id = "divCountry"class="col-md-auto invisible">
+						<label for = "travelText"> If yes, what countries?</label><br>
+						<div class="col-sm">
+							<input type="text" id = "travelText" name = "travel" required class="form-control" placeholder="Countries"><br>
+						</div>
+					</div>
+					<div class="row form-group">
 						<label for="ddSocial" class="col-md-auto col-form-label">
 							 Have you socialized with a group of 6 or more people in the last 14 days?: 
 						</label>
@@ -304,5 +306,14 @@
 	<FOOTER>
 		Made by Isaiah
 	</FOOTER>
+	<script src="https://code.jquery.com/jquery-migrate-3.3.2.js"
+            integrity="sha256-BDmtN+79VRrkfamzD16UnAoJP8zMitAz093tvZATdiE=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
+            integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
+            integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
+            crossorigin="anonymous"></script>
+			<script src = "js/script.js"></script>
 </body>
 </html>
