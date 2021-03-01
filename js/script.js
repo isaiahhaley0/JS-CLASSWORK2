@@ -6,5 +6,8 @@ function updateCountryView(){
     {
         divCountry.classList.remove("invisible");
     }
+    else{
+        divCountry.classList.add("invisible");
+    }
 
 }
