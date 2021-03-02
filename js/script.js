@@ -11,3 +11,18 @@ function updateCountryView(){
     }
 
 }
+
+
+function validateForm(){
+    var DoB = document.querySelector("#dob");
+    if(DoB.value == "")
+    {
+        /*show an error*/
+    }
+
+
+
+    var DobDate = new Date(Dob.value);
+    var todayDate = new Date();
+
+}
